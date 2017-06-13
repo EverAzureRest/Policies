@@ -1,0 +1,36 @@
+{
+    "Name":"Premera Developers",
+    "Id": null,
+    "IsCustom":"True",
+    "Description":"A Custom Role for Developers",
+    "Actions":[
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Storage/*/read",
+        "Microsoft.Storage/storageAccounts/listkeys/action",
+        "Microsoft.Compute/*/read",
+        "Microsoft.Network/*/read",
+        "Microsoft.Compute/VirtualMachines/*",
+        "Microsoft.Compute/availabilitySets/*",
+        "Microsoft.Computer/VirtualMachineScaleSets/*",
+        "Microsoft.Network/networkInterfaces/*",
+        "Microsoft.Network/virtualNetworks/subnets/join/action",
+        "Microsoft.Network/networkSecurityGroups/join/action",
+        "Microsoft.Network/applicationGateways/backendAddressPools/join/action",
+        "Microsoft.Network/loadBalancers/backendAddressPools/join/action",
+        "Microsoft.Network/loadBalancers/inboundNatPools/join/action",
+        "Microsoft.Network/loadBalancers/inboundNatRules/join/action",
+        "Microsoft.Network/loadBalancers/read",
+        "Microsoft.Insights/alertrules/*",
+        "Microsoft.Insights/diagnosticSettings/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/*",
+        "Microsoft.Support/*"
+    ],
+    "NotActions":[
+        "Microsoft.Resources/subscriptions/resourceGroups/moveResources/action",
+        "Microsoft.Resources/subscriptions/resourceGroups/validateMoveResources/action"
+    ],
+    "AssignableScopes":[
+        "/"
+    ]
+}
