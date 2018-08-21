@@ -1,0 +1,31 @@
+{
+"properties": {
+    "parameters": {
+
+        "AADAdmin": {
+            "type": "string",
+            "defaultValue": "r_azure_npe_rzr_infra"
+        }
+    }
+},
+
+"policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.SQL/managedInstances"
+        },
+        {
+          "not": {
+            "field": "type",
+            "equals": "[concat('Microsoft.SQL/managedInstances/administratorLogin/', parameters('AADAdmin'))]"
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "audit"
+    }
+  }
+}
