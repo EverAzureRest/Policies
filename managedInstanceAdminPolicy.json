@@ -1,13 +1,9 @@
 {
-"properties": {
     "parameters": {
-
         "AADAdmin": {
-            "type": "string",
-            "defaultValue": "r_azure_npe_rzr_infra"
+            "type": "string"
         }
-    }
-},
+    },
 
 "policyRule": {
     "if": {
