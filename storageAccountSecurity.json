@@ -1,30 +1,35 @@
 {
 "if": {
-    "not": {
         "allOf": [
             {
                 "field": "Type",
                 "equals": "Microsoft.Storage/storageAccounts"
             }, 
             {
-
-                "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
-                "equals": "deny"
+                "not": {
+                    "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
+                    "equals": "deny"
+                }
             },
             {
-                "field": "Microsoft.Storage/storageAccounts/networkAcls.bypass",
-                "equals": "AzureServices"
+                "not": {
+                    "field": "Microsoft.Storage/storageAccounts/networkAcls.bypass",
+                    "equals": "AzureServices"
+                }
             },
             {
-                "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
-                "equals": "True"
+                "not": {
+                    "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+                    "equals": "True"
+                }
             },
             {
-                "field": "Microsoft.Storage/storageAccounts/networkAcls.VirtualNetworkRules[*].id",
-                "exists": true
+                "not": {
+                    "field": "Microsoft.Storage/storageAccounts/networkAcls.VirtualNetworkRules[*].id",
+                    "exists": true
+                }
             }
         ]
-}
 },
 "then":{
     "effect": "Audit"
